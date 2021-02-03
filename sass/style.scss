@@ -1,0 +1,47 @@
+//variables
+$primary:#7ed56f; 
+$primary-light: #55c57a;
+$primary-dark:#28b485;
+
+$gray-light: #f9f9f9;
+
+$gray-dark: #777;
+$black:#000;
+//linking other sass file
+
+@import "../sass/header";
+@import "../sass/animation";
+@import "../sass/about";
+@import "../sass/typography";
+@import "../sass/features";
+@import "../sass/tours";
+@import "../sass/stories";
+@import "../sass/booking";
+@import "../sass/footer";
+@import "../sass/popup";
+@import "../sass/navigation";
+
+//basic setup
+
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family:'Lato', sans-serif;
+    font-weight: 400;
+    font-size:16px;
+    padding: 2rem;
+    color: $gray-dark;
+
+    @media only screen and (max-width:933px){
+        padding: 0;
+    }
+}
+

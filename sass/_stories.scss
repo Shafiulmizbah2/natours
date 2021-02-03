@@ -1,0 +1,105 @@
+.story{
+    padding: 6vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    .background-video{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        object-fit: cover;
+        opacity: .25;
+    }
+
+    &-details{
+        width: 75%;
+        padding: 3rem;
+        padding-left: 5rem;
+        background-color: #fff;
+        box-shadow: 0 1rem 2rem rgba(0,0,0,0.4);
+        position: relative;
+        transform: skewX(-12deg);
+        background-color: rgba(#fff,.65);
+
+        &-shape{
+            position: relative;
+            width: 15rem;
+            height: 15rem;
+            float: left;
+            transform: translateX(-2rem) skewX(12deg);
+           // border-radius: 50%;
+            clip-path: circle(50% at 50% 50%);
+           shape-outside: circle(50% at 50% 50%);
+
+           &-img{
+               width: 100%;
+               height: 100%;
+               background-size: cover;
+               background-position: center;
+               transform: scale(1);
+               transition: all .5s;
+               backface-visibility: hidden;
+           }
+
+           &-text{
+            color:#fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,10%);
+            text-transform: uppercase;
+            opacity: 0;
+            transition: all .5s;
+            backface-visibility: hidden;
+            
+        }
+        }
+        &-text{
+            transform: skewX(12deg);
+
+            .lead{
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+                word-spacing: 2px;
+            }
+        }
+
+        &:hover &-shape-text{
+            opacity: 1;
+            transform: translate(-50%,-50%);
+            
+        }
+
+        &:hover &-shape-img{
+            transform: scale(1.3);
+            filter: blur(3px) brightness(70%);
+        }
+
+        @media only screen and (max-width:577px){
+            transform: skewX(0);
+
+            &-text{
+                transform: skewX(0);
+            }
+
+            &-shape{
+                transform: translateX(-2rem) skewX(0);
+            }
+        }
+        @media only screen and (max-width:414px){
+
+            &-shape{
+                width: 100%;
+                width: 10rem;
+                height: 10rem;
+                shape-outside: circle(50% at 50% 50%);
+                transform: translateX(-2rem) skewX(0);
+            }
+        }
+    }
+}
